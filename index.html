@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather App</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://use.fontawesome.com/3c538cc85f.js"></script>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+  
+    *{
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body onload="defaultWeb()">
+  <h1 id="isLoad"></h1>
+  <div class="" id="bodyBg" style="min-height: 100vh;">
+    <div class="row">
+      <div class="col-10 mx-auto">
+        <div class="row">
+          <h1 class="text-light text-center">Weather app</h1>  
+          <div class="col-sm-3 col-xl-5">
+            <span class="d-flex">
+              <input type="text-area" placeholder="Search by City Name" id="cityName" class="form-control" style="
+                color: aliceblue;
+                border: none; 
+                outline: none;
+                border-radius: 0px;
+                border-bottom: 2px solid #ffff;
+                background-color: rgba(0, 0, 0, 0);">
+              <i class="fa fa-search fs-5 my-2 text-light" style="margin-left: -4em;" onclick="myWeather()">Next</i>
+            </span>
+          </div>
+          <div class="col-4">
+          <!-- <button class="btn btn-success" onclick="myWeather()">Check</button> -->
+          <!-- <button onclick="ent()">click me</button> -->
+          </div>
+        </div>
+        <!-- <strong class="display-5">Details</strong> -->
+        <div class="row p-0 m-0">
+          <div class="col-sm-12 col-xl-6 d-flex align-items-center justify-content-lg-start justify-content-center">
+            <div class="text-light rounded p-4 m-2" style="background: linear-gradient(rgba(32, 39, 25, 0.5), rgba(14, 19, 9, 0.5), rgba(19, 25, 14, 0.5))">
+              <div class="display-1"><span id="tempe"></span></div>
+              <h3 id="weatherDet"></h3>
+              <p class="my-auto my-3 display"><span id="locations"></span></p>
+              <div id="datTime" class="mt-4"></div>
+              <div id="dayName"></div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-xl-6 d-flex align-items-center p-0 justify-content-center m-0">
+            <div class="text-light rounded p-1 w-" style="background: linear-gradient(rgba(32, 39, 25, 0.5), rgba(14, 19, 9, 0.5), rgba(19, 25, 14, 0.5))">
+              <p class="display-5 text-center">Weather Details</p>
+              <div class="ps-2 m-0 p-0">
+                <h5 class="">City:  <span></span><span id="city"></span></h5>
+              <h5 class=" ">Country:  <span></span><span id="country"></span></h5>
+              <h5 class=" ">Longitude: <span></span><span id="longitude"></span></h5>
+              <h5 class=" ">Latitude: <span></span><span id="latitude"></span></h5>
+              <hr class="text-light border-bold">
+              <h5 class=" ">Temperature: <span></span><span id="temperature"></span></h5>
+              <h5 class=" ">Weather: <span></span><span id="weather"></span></h5>
+              <h5 class=" ">Humidity: <span></span><span id="humidity"></span></h5>
+              <h5 class=" ">Wind: <span></span><span id="wind"></span></h5>
+              <h5 class=" ">Pressure: <span></span><span id="pressure"></span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col" id="lowTem"></div> -->
+    <div class="" id="higTem"></div>
+  </div>
+  <script src="javscriptFile.js"></script>
+</body>
+</html>
