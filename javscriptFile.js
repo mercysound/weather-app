@@ -8,7 +8,7 @@ function displayTime(){
   var hr = (myDay.getHours()).toString().padStart(2, "0")
   var mnth = (myDay.getMonth()+1).toString().padStart(2, "0")
   var yr = myDay.getFullYear()
-  var allDatTim = (sc + ':' + mn + ':' + hr + "  " + mnth + '-' + yr)
+  var allDatTim = (hr + ':' + mn + ':' + sc +  "  " + mnth + '-' + yr)
   datTime.innerText = allDatTim
 }
 // console.log(today);
@@ -64,23 +64,43 @@ const defaultWeb = async ()=>{
         bodyBg.style.display = "block"
         isLoad.innerHTML = ""
         console.log(convertedResponse);
-        if(convertedResponse.main.temp >= 1 && convertedResponse.main.temp <= 10){
-        bodyBg.style.background = `url("./asset/deg 1.jpeg")`
-        bodyBg.style.backgroundRepeat = `no-repeat`
-        bodyBg.style.backgroundSize = `100% 100%`
-        }else if(convertedResponse.main.temp >= 11 && convertedResponse.main.temp <= 20){
-        bodyBg.style.background = `url("./asset/deg 2.jpeg")`
-        bodyBg.style.backgroundRepeat = `no-repeat`
-        bodyBg.style.backgroundSize = `100% 100%`
-        }else if(convertedResponse.main.temp >= 21 && convertedResponse.main.temp <= 30){
-          bodyBg.style.background = `url("./asset/deg 3.jpeg")`
-        bodyBg.style.backgroundRepeat = `no-repeat`
-        bodyBg.style.backgroundSize = `100% 100%`
-        }else if(convertedResponse.main.temp >= 31){
-          bodyBg.style.background = `url("./asset/deg 4.jpeg")`
-        bodyBg.style.backgroundRepeat = `no-repeat`
-        bodyBg.style.backgroundSize = `100% 100%`
-        }
+if(convertedResponse.main.temp >= 1 && convertedResponse.main.temp <= 5){
+bodyBg.style.background = `url("./asset/1 to 5.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 5 && convertedResponse.main.temp <= 10){
+bodyBg.style.background = `url("./asset/5 to 10.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 10 && convertedResponse.main.temp <= 15){
+bodyBg.style.background = `url("./asset/10 to 15.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 15 && convertedResponse.main.temp <= 20){
+bodyBg.style.background = `url("./asset/15 to 20.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 20 && convertedResponse.main.temp <= 25){
+bodyBg.style.background = `url("./asset/10 to 15.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 25 && convertedResponse.main.temp <= 30){
+bodyBg.style.background = `url("./asset/25 to 30.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 30 && convertedResponse.main.temp <= 35){
+bodyBg.style.background = `url("./asset/30-35.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(convertedResponse.main.temp >= 35 && convertedResponse.main.temp <= 40){
+bodyBg.style.background = `url("./asset/35-40.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else{
+bodyBg.style.background = `url("./asset/else pic.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}
         // first col weather detail
         tempe.innerHTML = `<h1 class="display-1">${convertedResponse.main.temp}<span>&#176;</span>C</h1>`
         locations.innerHTML = `<h1>${convertedResponse.name}, ${convertedResponse.sys.country}</h1>`
@@ -90,7 +110,7 @@ const defaultWeb = async ()=>{
         country.innerHTML = `<span style="padding-left: 70px;">${convertedResponse.sys.country}</span>`
         longitude.innerHTML = `<span style="padding-left: 50px;">${convertedResponse.coord.lon}</span>` 
         latitude.innerHTML = `<span style="padding-left: 70px;">${convertedResponse.coord.lat}</span>`
-        temperature.innerHTML = `<span style="padding-left: 40px;">${convertedResponse.main.temp} <span>&#176;</span>C</span>`
+        temperature.innerHTML = `<span style="padding-left: 40px;">${convertedResponse.main.temp}<span>&#176;</span>C</span>`
         weather.innerHTML = `<span style="padding-left: 80px;">${convertedResponse.weather[0].main}</span>`
         humidity.innerHTML = `<span style="padding-left: 80px;">${convertedResponse.main.humidity}%</span>`
         wind.innerHTML = `<span style="padding-left: 100px;">${convertedResponse.wind.deg} m/s</span>` 
@@ -118,40 +138,49 @@ const defaultWeb = async ()=>{
     // .catch((err)=>{
     //     console.log(err);
     //   })  
-    alert("This site has been block from access your location, therefore you will have lagos, Nigerian as your default location")
-  // for notice of done loading diplay content
-    // console.log(cvtRes);
+    alert("This site has been block from access your location, therefore you will have lagos, Nigerian as your default location");
         isLoading = false
         bodyBg.style.display = "block"
         isLoad.innerHTML = ""
-    if(cvtRes.main.temp >= 1 && cvtRes.main.temp <= 10){
-      bodyBg.style.background = `url("./asset/deg 1.jpeg")`
-     bodyBg.style.backgroundRepeat = `no-repeat`
-     bodyBg.style.backgroundSize = `100% 100%`
-     bodyBg.style.padding = `0px`
-     bodyBg.style.margin = `0px`
-    }else if(cvtRes.main.temp >= 11 && cvtRes.main.temp <= 20){
-      bodyBg.style.background = `url("./asset/deg 2.jpeg")`
-     bodyBg.style.backgroundRepeat = `no-repeat`
-     bodyBg.style.backgroundSize = `100% 100%`
-     bodyBg.style.padding = `0px`
-     bodyBg.style.margin = `0px`
-    }else if(cvtRes.main.temp >= 21 && cvtRes.main.temp <= 30){
-      bodyBg.style.background = `url("./asset/deg 3.jpeg")`
-     bodyBg.style.backgroundRepeat = `no-repeat`
-     bodyBg.style.backgroundSize = `100% 100%`
-     bodyBg.style.padding = `0px`
-     bodyBg.style.margin = `0px`
-    }else if(cvtRes.main.temp >= 31){
-      bodyBg.style.background = `url("./asset/deg 4.jpeg")`
-     bodyBg.style.backgroundRepeat = `no-repeat`
-     bodyBg.style.backgroundSize = `100% 100%`
-     bodyBg.style.padding = `0px`
-     bodyBg.style.margin = `0px`
-    }
-    // console.log(cvtRes);
-    // first col weather detail
-    tempe.innerHTML = `<h1 class="display-1" >${cvtRes.main.temp}<span>&#176;</span>C</h1>`
+        if(cvtRes.main.temp >= 1 && cvtRes.main.temp <= 5){
+          bodyBg.style.background = `url("./asset/1 to 5.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 5 && cvtRes.main.temp <= 10){
+          bodyBg.style.background = `url("./asset/5 to 10.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 10 && cvtRes.main.temp <= 15){
+          bodyBg.style.background = `url("./asset/10 to 15.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 15 && cvtRes.main.temp <= 20){
+          bodyBg.style.background = `url("./asset/15 to 20.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 20 && cvtRes.main.temp <= 25){
+          bodyBg.style.background = `url("./asset/10 to 15.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 25 && cvtRes.main.temp <= 30){
+          bodyBg.style.background = `url("./asset/25 to 30.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 30 && cvtRes.main.temp <= 35){
+          bodyBg.style.background = `url("./asset/30-35.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else if(cvtRes.main.temp >= 35 && cvtRes.main.temp <= 40){
+          bodyBg.style.background = `url("./asset/35-40.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }else{
+          bodyBg.style.background = `url("./asset/else pic.jpeg")`
+          bodyBg.style.backgroundRepeat = `no-repeat`
+          bodyBg.style.backgroundSize = `100% 100%`
+          }
+
+        tempe.innerHTML = `<h1 class="display-1" >${cvtRes.main.temp}<span>&#176;</span>C</h1>`
         locations.innerHTML = `<h1>${cvtRes.name}, ${cvtRes.sys.country}</h1>`
         weatherDet.innerHTML = cvtRes.weather[0].description
         // second col weather detail
@@ -159,7 +188,7 @@ const defaultWeb = async ()=>{
         country.innerHTML = `<span style="padding-left: 70px;">${cvtRes.sys.country}</span>`
         longitude.innerHTML = `<span style="padding-left: 50px;">${cvtRes.coord.lon}</span>` 
         latitude.innerHTML = `<span style="padding-left: 70px;">${cvtRes.coord.lat}</span>`
-        temperature.innerHTML = `<span style="padding-left: 40px;">${cvtRes.main.temp} <span>&#176;</span>C</span>`
+        temperature.innerHTML = `<span style="padding-left: 40px;">${cvtRes.main.temp}<span>&#176;</span>C</span>`
         weather.innerHTML = `<span style="padding-left: 80px;">${cvtRes.weather[0].main}</span>`
         humidity.innerHTML = `<span style="padding-left: 80px;">${cvtRes.main.humidity}%</span>`
         wind.innerHTML = `<span style="padding-left: 100px;">${cvtRes.wind.deg} m/s</span>` 
@@ -172,62 +201,7 @@ const defaultWeb = async ()=>{
   }else{
     alert("your browser is not support geolocation")
   }
-  //  if(navigator.geolocation = false){
-  //   fetch(endPoint)
-    // .then((response)=>{console.log(response)})
-    // let myFetch = await fetch(endPoint)
-    // // console.log(myFetch);
-    // var cvtRes = await myFetch.json()
-    // console.log(cvtRes);
-    // if(cvtRes.main.temp >= 1 && cvtRes.main.temp <= 10){
-    //   bodyBg.style.background = `url("./asset/deg 1.jpeg")`
-    //  bodyBg.style.backgroundRepeat = `no-repeat`
-    //  bodyBg.style.backgroundSize = `100% 100%`
-    //  bodyBg.style.padding = `0px`
-    //  bodyBg.style.margin = `0px`
-    // }else if(cvtRes.main.temp >= 11 && cvtRes.main.temp <= 20){
-    //   bodyBg.style.background = `url("./asset/deg 2.jpeg")`
-    //  bodyBg.style.backgroundRepeat = `no-repeat`
-    //  bodyBg.style.backgroundSize = `100% 100%`
-    //  bodyBg.style.padding = `0px`
-    //  bodyBg.style.margin = `0px`
-    // }else if(cvtRes.main.temp >= 21 && cvtRes.main.temp <= 30){
-    //   bodyBg.style.background = `url("./asset/deg 3.jpeg")`
-    //  bodyBg.style.backgroundRepeat = `no-repeat`
-    //  bodyBg.style.backgroundSize = `100% 100%`
-    //  bodyBg.style.padding = `0px`
-    //  bodyBg.style.margin = `0px`
-    // }else if(cvtRes.main.temp >= 31){
-    //   bodyBg.style.background = `url("./asset/deg 4.jpeg")`
-    //  bodyBg.style.backgroundRepeat = `no-repeat`
-    //  bodyBg.style.backgroundSize = `100% 100%`
-    //  bodyBg.style.padding = `0px`
-    //  bodyBg.style.margin = `0px7
-    // }
-    // console.log(cvtRes);
-    // // first col wether Detail
-    // tempe.innerHTML = `<h1 class="display-1" >${cvtRes.main.temp} 0<span>&#176;</span>c</h1>`
-    // locations.innerHTML = `<h1>${cvtRes.name}<br>${cvtRes.sys.country}</h1>`
-    // weatherDet.innerText = cvtRes.weather[0].description
-    // // second col weather detail
-    // city.innerText = cvtRes.name
-    // temperature.innerText = cvtRes.main.temp + " 0c"
-    // country.innerText = cvtRes.sys.country
-    // longitude.innerText = cvtRes.coord.lon
-    // latitude.innerText = cvtRes.coord.lat
-    // weather.innerText = cvtRes.weather[0].main
-    // humidity.innerText = cvtRes.main.humidity + "%"
-    // wind.innerHTML += `${cvtRes.wind.deg} <span>&#176;</span>C` 
-    // pressure.innerHTML += `${cvtRes.main.pressure} <span>hPa</span>`
-
-  // }
 }
-// function ent(){
-//   // alert("jo")
-//   bodyBg.style.background = `url("intro_img.jpg")`
-//   bodyBg.style.backgroundRepeat = `no-repeat`
-//   bodyBg.style.backgroundSize = `100% 100%`
-// }
 async function myWeather (){
   var myKey = '3a9bfbff1f72ab21718f0227e59a487d'
   var myLocation = cityName.value
@@ -249,26 +223,45 @@ async function myWeather (){
     isLoading = false
     bodyBg.style.display = "block"
     isLoad.innerHTML = ""
-if(cvtRes.main.temp >= 1 && cvtRes.main.temp <= 10){
-bodyBg.style.background = `url("./asset/deg 1.jpeg")`
+if(cvtRes.main.temp >= 1 && cvtRes.main.temp <= 5){
+bodyBg.style.background = `url("./asset/1 to 5.jpeg")`
 bodyBg.style.backgroundRepeat = `no-repeat`
 bodyBg.style.backgroundSize = `100% 100%`
-}else if(cvtRes.main.temp >= 11 && cvtRes.main.temp <= 20){
-bodyBg.style.background = `url("./asset/deg 2.jpeg")`
+}else if(cvtRes.main.temp >= 5 && cvtRes.main.temp <= 10){
+bodyBg.style.background = `url("./asset/5 to 10.jpeg")`
 bodyBg.style.backgroundRepeat = `no-repeat`
 bodyBg.style.backgroundSize = `100% 100%`
-}else if(cvtRes.main.temp >= 21 && cvtRes.main.temp <= 30){
-bodyBg.style.background = `url("./asset/deg 3.jpeg")`
+}else if(cvtRes.main.temp >= 10 && cvtRes.main.temp <= 15){
+bodyBg.style.background = `url("./asset/10 to 15.jpeg")`
 bodyBg.style.backgroundRepeat = `no-repeat`
 bodyBg.style.backgroundSize = `100% 100%`
-}else if(cvtRes.main.temp >= 31){
-bodyBg.style.background = `url("./asset/deg 4.jpeg")`
+}else if(cvtRes.main.temp >= 15 && cvtRes.main.temp <= 20){
+bodyBg.style.background = `url("./asset/15 to 20.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(cvtRes.main.temp >= 20 && cvtRes.main.temp <= 25){
+bodyBg.style.background = `url("./asset/10 to 15.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(cvtRes.main.temp >= 25 && cvtRes.main.temp <= 30){
+bodyBg.style.background = `url("./asset/25 to 30.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(cvtRes.main.temp >= 30 && cvtRes.main.temp <= 35){
+bodyBg.style.background = `url("./asset/30-35.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else if(cvtRes.main.temp >= 35 && cvtRes.main.temp <= 40){
+bodyBg.style.background = `url("./asset/35-40.jpeg")`
+bodyBg.style.backgroundRepeat = `no-repeat`
+bodyBg.style.backgroundSize = `100% 100%`
+}else{
+bodyBg.style.background = `url("./asset/else pic.jpeg")`
 bodyBg.style.backgroundRepeat = `no-repeat`
 bodyBg.style.backgroundSize = `100% 100%`
 }
-// console.log(cvtRes);
-// first col weather detail
-tempe.innerHTML = `<h1 class="display-1" >${cvtRes.main.temp} <span>&#176;</span>C</h1>`
+
+tempe.innerHTML = `<h1 class="display-1" >${cvtRes.main.temp}<span>&#176;</span>C</h1>`
     locations.innerHTML = `<h1>${cvtRes.name}, ${cvtRes.sys.country}</h1>`
     weatherDet.innerHTML = cvtRes.weather[0].description
     // second col weather detail
@@ -276,7 +269,7 @@ tempe.innerHTML = `<h1 class="display-1" >${cvtRes.main.temp} <span>&#176;</span
     country.innerHTML = `<span style="padding-left: 70px;">${cvtRes.sys.country}</span>`
     longitude.innerHTML = `<span style="padding-left: 50px;">${cvtRes.coord.lon}</span>` 
     latitude.innerHTML = `<span style="padding-left: 70px;">${cvtRes.coord.lat}</span>`
-    temperature.innerHTML = `<span style="padding-left: 40px;">${cvtRes.main.temp} <span>&#176;</span>C</span>`
+    temperature.innerHTML = `<span style="padding-left: 40px;">${cvtRes.main.temp}<span>&#176;</span>C</span>`
     weather.innerHTML = `<span style="padding-left: 80px;">${cvtRes.weather[0].main}</span>`
     humidity.innerHTML = `<span style="padding-left: 80px;">${cvtRes.main.humidity}%</span>`
     wind.innerHTML = `<span style="padding-left: 100px;">${cvtRes.wind.deg} m/s</span>` 
